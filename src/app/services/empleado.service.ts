@@ -19,4 +19,10 @@ export class EmpleadoService {
   obtenerRecibosPorEmpleado(idEmpleado: string): Observable<Recibo[]> {
     return this.http.get<Recibo[]>(this.API_URL+ 'recibo/'+ idEmpleado );
   }
+  agregarEmpleado(empleado: Empleado): Observable<Empleado> {
+    return this.http.post<Empleado>(this.API_URL+ 'nuevo/', empleado);
+  }
+  agregarRecibo(recibo: Recibo): Observable<Recibo> {
+    return this.http.post<Recibo>(this.API_URL+ 'recibos/nuevo/', recibo);
+  }
 }

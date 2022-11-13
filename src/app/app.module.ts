@@ -11,6 +11,8 @@ import { RecibosListadoComponent } from './empleados/recibos-listado/recibos-lis
 import { HomeComponent } from './home/home/home.component';
 import { EmpleadoService } from './services/empleado.service';
 import localeEs from '@angular/common/locales/es-AR';
+import { AltaEmpleadoComponent } from './empleados/alta-empleado/alta-empleado.component';
+import { AltaReciboComponent } from './empleados/alta-recibo/alta-recibo.component';
 registerLocaleData(localeEs, 'es-AR');
 
 @NgModule({
@@ -19,6 +21,8 @@ registerLocaleData(localeEs, 'es-AR');
     ListadoComponent,
     RecibosListadoComponent,
     HomeComponent,
+    AltaEmpleadoComponent,
+    AltaReciboComponent,
   ],
   imports: [
     BrowserModule,

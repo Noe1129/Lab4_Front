@@ -6,10 +6,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarID">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" routerLink="empleados">Empleados</a>
-                    <a class="nav-link active" aria-current="page" routerLink="recibos">Recibos</a>                    
-                </div>
+
+                  <div class="dropdown open">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                                Empleados
+                            </button>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                        <a class="dropdown-item" routerLink="nuevo">Nuevo</a>
+                        <a class="dropdown-item" routerLink="empleados">Listado</a>
+                    </div>
+                  </div>
+                  <div class="dropdown open">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                                Recibos
+                            </button>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                        <a class="dropdown-item" routerLink="recibos/nuevo">Nuevo</a>
+                        <a class="dropdown-item" routerLink="recibos">Listado</a>
+                    </div>
+                  </div>
             </div>
         </div>
     </nav>

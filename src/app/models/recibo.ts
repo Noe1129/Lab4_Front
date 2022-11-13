@@ -7,4 +7,5 @@ export class Recibo {
     obraSocial: number;
     fondoComplejidad: number;
     sueldoNeto: number;
+    legajo:number;
 }
