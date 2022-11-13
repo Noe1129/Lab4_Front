@@ -1,0 +1,50 @@
+<div class="container-sm !justify !shadow">
+  
+  <form [formGroup]="formulario">
+  <div class="col-4">
+    <label for="selectPais" class="form-label">Seleccione un empleado:</label>
+    <select id="selectPais" class="form-select" formControlName="empleadoLegajo">
+      <option *ngFor="let empleado of empleados" [value]="empleado.legajo">{{ empleado.nombre }}</option>
+    </select>
+  </div>
+  </form>
+
+  <div class="table-responsive">
+    <table
+      class="table table-striped-columns table-hover table-bordered table-secondary align-middle"
+    >
+      <thead class="table-white">
+        <caption>
+          Recibos
+        </caption>
+        <tr>
+          <th>Número</th>
+          <th>Mes</th>
+          <th>Año</th>
+          <th>Antigüedad</th>
+          <th>Jubilación</th>
+          <th>Obra Social</th>
+          <th>Fondo Complejidad</th>
+          <th>Sueldo Neto</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let recibo of recibos" class="table-secondary">
+          <td scope="row">{{ recibo.nroRecibo }}</td>
+          <td>{{ recibo.mes |date:"MMMM"}}</td>
+          <td>{{ recibo.anio }}</td>
+          <td>{{ recibo.antiguedad | currency: "ARS" }}</td>
+          <td>{{ recibo.jubilacion | currency: "ARS" }}</td>
+          <td>{{ recibo.obraSocial | currency:"ARS" }}</td>
+          <td>{{ recibo.fondoComplejidad | currency:"ARS" }}</td>
+          <td>{{ recibo.sueldoNeto | currency:"ARS" }}</td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+
+
+
