@@ -1,0 +1,35 @@
+<div class="container-sm !justify !shadow pt-3">
+    <h3>Reporte de sueldos netos agrupado por área</h3>
+    <form [formGroup]="formulario" class="row g-3 mt-3" >
+        <div class="col-auto">
+          <label for="mes" class="form-label">Mes:</label>
+          <input type="text" class="form-control" id="mes" formControlName="mes">
+        </div>
+        <!-- <div *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.hasError('required')" class="alert alert-danger">
+          El nombre es requerido
+      </div> -->
+        <div class="col-auto">
+          <label for="anio" class="form-label">Año:</label>
+          <input type="text" class="form-control" id="anio"  formControlName="anio">
+        </div>
+        <div class="col-auto">
+            <br>
+        <button class="btn btn-primary" role="button" (click)="actualizarReporte()">Aplicar</button>
+    </div>
+    </form>
+    <br>
+    <div *ngIf="mostrarNoHayDatos" class="text-danger">
+       <p> No hay datos para el mes y año seleccionado</p>
+    </div>
+
+    <div *ngIf="mostrarGrafico" class="container-fluid pt-5" style="width: 50vw; margin: auto">    
+        <canvas baseChart type="bar" [data]="datos" [options]="barChartOptions"></canvas>
+    </div>
+    
+
+
+
+
+
+
+</div>

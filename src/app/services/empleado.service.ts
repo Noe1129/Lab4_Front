@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Empleado } from '../models/empleado';
 import { Recibo } from '../models/recibo';
+import { Reporte } from '../models/reporte';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +25,9 @@ export class EmpleadoService {
   }
   agregarRecibo(recibo: Recibo): Observable<Recibo> {
     return this.http.post<Recibo>(this.API_URL+ 'recibos/nuevo/', recibo);
+  }
+
+  obtenerReporte(anio:number,mes:number): Observable<Reporte[]> {
+    return this.http.get<Reporte[]>(this.API_URL+ 'reporte/'+ anio +'/'+ mes );
   }
 }
