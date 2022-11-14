@@ -50,6 +50,7 @@ export class ReporteComponent implements OnInit, OnDestroy {
             next: (respuesta: Reporte[]) => {
               if (respuesta.length != 0) {
                 this.mostrarGrafico=true;
+                this.mostrarNoHayDatos=false;
                 const datosTransformados = respuesta.map((datos) => {
                   return {
                     data: [datos.neto],
@@ -65,6 +66,7 @@ export class ReporteComponent implements OnInit, OnDestroy {
                 };
               } else {
                 this.mostrarNoHayDatos = true;
+                this.mostrarGrafico=false;
               }
             },
             error: () => alert('API no responde'),
