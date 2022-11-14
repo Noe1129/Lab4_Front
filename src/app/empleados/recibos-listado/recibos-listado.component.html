@@ -1,4 +1,5 @@
 <div class="container-sm !justify !shadow pt-3">
+  <h3 >Recibos</h3>
   
   <form [formGroup]="formulario">
   <div class="col-4">
@@ -8,15 +9,14 @@
     </select>
   </div>
   </form>
+  
 
-  <div class="table-responsive">
+  <div class="table-responsive pt-3">
+
     <table
-      class="table table-striped-columns table-hover table-bordered table-secondary align-middle"
+      class="table table-hover table-bordered  align-middle"
     >
-      <thead class="table-white">
-        <caption>
-          Recibos
-        </caption>
+      <thead >
         <tr>
           <th>Número</th>
           <th>Mes</th>
@@ -28,8 +28,8 @@
           <th>Sueldo Neto</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider">
-        <tr *ngFor="let recibo of recibos" class="table-secondary">
+      <tbody >
+        <tr *ngFor="let recibo of recibos" >
           <td scope="row">{{ recibo.nroRecibo }}</td>
           <td>{{ recibo.mes |date:"MMMM"}}</td>
           <td>{{ recibo.anio }}</td>

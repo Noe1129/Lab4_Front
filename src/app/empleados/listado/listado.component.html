@@ -1,12 +1,10 @@
 <div class="container-sm !justify !shadow pt-3">
 <div class="table-responsive">
+  <h3 >Empleados</h3>
   <table
-    class="table table-striped-columns table-hover table-bordered table-primary align-middle"
+    class="table  table-hover table-bordered  align-middle"
   >
-    <thead class="table-white">
-      <caption>
-        Empleados
-      </caption>
+    <thead class="table">
       <tr>
         <th>Legajo</th>
         <th>Nombre</th>
@@ -18,8 +16,8 @@
         <th>Antigüedad</th>
       </tr>
     </thead>
-    <tbody class="table-group-divider">
-      <tr *ngFor="let empleado of empleados" class="table-primary">
+    <tbody class="table">
+      <tr *ngFor="let empleado of empleados">
         <td scope="row">{{ empleado.legajo }}</td>
         <td>{{ empleado.nombre }}</td>
         <td>{{ empleado.apellido }}</td>

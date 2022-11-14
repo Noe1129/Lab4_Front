@@ -96,20 +96,20 @@ export class ReporteComponent implements OnInit, OnDestroy {
     scales: {
       x: {
         grid: {
-          color: 'black',
+          color: 'white',
           drawBorder: false,
         },
-        ticks: { color: 'black' },
+        ticks: { color: 'white' },
         offset: true,
       },
       y: {
         grid: {
-          color: 'black',
+          color: 'white',
           drawBorder: false,
         },
-        ticks: { color: 'black' },
+        ticks: { color: 'white' },
       },
     },
-    color: 'black',
+    color: 'white',
   };
 }
