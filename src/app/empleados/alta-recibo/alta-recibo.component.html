@@ -7,6 +7,9 @@
           {{ empleado.nombre }}, {{ empleado.apellido }}
         </option>
       </select>
+      <div *ngIf="formulario.get('legajo')?.touched && formulario.get('legajo')?.hasError('required')" class="alert alert-danger" role="alert">
+        El empleado es requerido
+    </div>
     </div>
     <div class="mb-3">
       <label for="mes" class="form-label">Mes:</label>
@@ -16,6 +19,9 @@
         id="mes"
         formControlName="mes"
       />
+      <div *ngIf="formulario.get('mes')?.touched && formulario.get('mes')?.hasError('required')" class="alert alert-danger" role="alert">
+        El mes es requerido
+    </div>
     </div>
     <div class="mb-3">
       <label for="anio" class="form-label">Año:</label>
@@ -25,6 +31,9 @@
         id="anio"
         formControlName="anio"
       />
+      <div *ngIf="formulario.get('anio')?.touched && formulario.get('anio')?.hasError('required')" class="alert alert-danger" role="alert">
+        El año es requerido
+    </div>
     </div>
     <div class="mb-3">
       <label for="antiguedad" class="form-label">Antigüedad:</label>
@@ -34,6 +43,9 @@
         id="antiguedad"
         formControlName="antiguedad"
       />
+      <div *ngIf="formulario.get('antiguedad')?.touched && formulario.get('antiguedad')?.hasError('required')" class="alert alert-danger" role="alert">
+        La antigüedad es requerida
+    </div>
     </div>
     <div class="mb-3">
       <label for="jubilacion" class="form-label">Jubilación:</label>
@@ -43,6 +55,9 @@
         id="jubilacion"
         formControlName="jubilacion"
       />
+      <div *ngIf="formulario.get('jubilacion')?.touched && formulario.get('jubilacion')?.hasError('required')" class="alert alert-danger" role="alert">
+        La jubilación es requerida
+    </div>
     </div>
 
     <div class="mb-3">
@@ -53,6 +68,9 @@
         id="obraSocial"
         formControlName="obraSocial"
       />
+      <div *ngIf="formulario.get('obraSocial')?.touched && formulario.get('obraSocial')?.hasError('required')" class="alert alert-danger" role="alert">
+        La obra social es requerida
+    </div>
     </div>
     <div class="mb-3">
       <label for="fondoComplejidad" class="form-label"
@@ -64,6 +82,9 @@
         id="fondoComplejidad"
         formControlName="fondoComplejidad"
       />
+      <div *ngIf="formulario.get('fondoComplejidad')?.touched && formulario.get('fondoComplejidad')?.hasError('required')" class="alert alert-danger" role="alert">
+        El fondo de complejidad es requerido
+    </div>
     </div>
 
     <button type="submit" class="btn btn-primary" (click)="guardar()">

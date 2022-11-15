@@ -8,6 +8,9 @@
         id="nombre"
         formControlName="nombre"
       />
+      <div *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.hasError('required')" class="alert alert-danger" role="alert">
+        El nombre es requerido
+    </div>
     </div>
     <div class="mb-3">
       <label for="apellido" class="form-label">Apellido:</label>
@@ -17,6 +20,9 @@
         id="apellido"
         formControlName="apellido"
       />
+      <div *ngIf="formulario.get('apellido')?.touched && formulario.get('apellido')?.hasError('required')" class="alert alert-danger" role="alert">
+        El apellido es requerido
+    </div>
     </div>
     <div class="mb-3">
       <label for="fechaNacimiento" class="form-label"
@@ -28,6 +34,9 @@
         id="fechaNacimiento"
         formControlName="fechaNacimiento"
       />
+      <div *ngIf="formulario.get('fechaNacimiento')?.touched && formulario.get('fechaNacimiento')?.hasError('required')" class="alert alert-danger" role="alert">
+        La fecha de nacimiento es requerida
+    </div>
     </div>
     <div class="mb-3">
       <label for="fechaIngreso" class="form-label">Fecha de Ingreso:</label>
@@ -37,6 +46,9 @@
         id="fechaIngreso"
         formControlName="fechaIngreso"
       />
+      <div *ngIf="formulario.get('fechaIngreso')?.touched && formulario.get('fechaIngreso')?.hasError('required')" class="alert alert-danger" role="alert">
+        La fecha de ingreso es requerida
+    </div>
     </div>
 
     <div class="mb-3">
@@ -50,6 +62,9 @@
         <option value="Tesoreria">Tesorería</option>
         <option value="Ventas">Ventas</option>
       </select>
+      <div *ngIf="formulario.get('area')?.touched && formulario.get('area')?.hasError('required')" class="alert alert-danger" role="alert">
+        El área es requerida
+    </div>
     </div>
 
     <div class="mb-3">
@@ -60,6 +75,9 @@
         id="sueldoBruto"
         formControlName="sueldoBruto"
       />
+      <div *ngIf="formulario.get('sueldoBruto')?.touched && formulario.get('sueldoBruto')?.hasError('required')" class="alert alert-danger" role="alert">
+        El sueldo bruto es requerido
+    </div>
     </div>
 
     <button type="submit" class="btn btn-primary" (click)="guardar()">
