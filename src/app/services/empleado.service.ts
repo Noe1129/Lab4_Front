@@ -18,16 +18,18 @@ export class EmpleadoService {
     return result;
   }
   obtenerRecibosPorEmpleado(idEmpleado: string): Observable<Recibo[]> {
-    return this.http.get<Recibo[]>(this.API_URL+ 'recibo/'+ idEmpleado );
+    return this.http.get<Recibo[]>(this.API_URL + 'recibo/' + idEmpleado);
   }
   agregarEmpleado(empleado: Empleado): Observable<Empleado> {
-    return this.http.post<Empleado>(this.API_URL+ 'nuevo/', empleado);
+    return this.http.post<Empleado>(this.API_URL + 'nuevo/', empleado);
   }
   agregarRecibo(recibo: Recibo): Observable<Recibo> {
-    return this.http.post<Recibo>(this.API_URL+ 'recibos/nuevo/', recibo);
+    return this.http.post<Recibo>(this.API_URL + 'recibos/nuevo/', recibo);
   }
 
-  obtenerReporte(anio:number,mes:number): Observable<Reporte[]> {
-    return this.http.get<Reporte[]>(this.API_URL+ 'reporte/'+ anio +'/'+ mes );
+  obtenerReporte(anio: number, mes: number): Observable<Reporte[]> {
+    return this.http.get<Reporte[]>(
+      this.API_URL + 'reporte/' + anio + '/' + mes
+    );
   }
 }

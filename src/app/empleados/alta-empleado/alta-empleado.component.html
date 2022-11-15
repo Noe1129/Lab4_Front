@@ -1,60 +1,69 @@
 <div class="container-sm !justify !shadow pt-3">
+  <form [formGroup]="formulario">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        formControlName="nombre"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="apellido"
+        formControlName="apellido"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="fechaNacimiento" class="form-label"
+        >Fecha de Nacimiento:</label
+      >
+      <input
+        type="date"
+        class="form-control"
+        id="fechaNacimiento"
+        formControlName="fechaNacimiento"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="fechaIngreso" class="form-label">Fecha de Ingreso:</label>
+      <input
+        type="date"
+        class="form-control"
+        id="fechaIngreso"
+        formControlName="fechaIngreso"
+      />
+    </div>
 
+    <div class="mb-3">
+      <label for="area" class="form-label">Área:</label>
+      <select formControlName="area" class="form-select" id="area">
+        <option value="Administracion">Administración</option>
+        <option value="Compras">Compras</option>
+        <option value="Finanzas">Finanzas</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Recursos Humanos">Recursos Humanos</option>
+        <option value="Tesoreria">Tesorería</option>
+        <option value="Ventas">Ventas</option>
+      </select>
+    </div>
 
-    <form [formGroup]="formulario">
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre:</label>
-          <input type="text" class="form-control" id="nombre" formControlName="nombre">
-        </div>
-        <!-- <div *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.hasError('required')" class="alert alert-danger">
-          El nombre es requerido
-      </div> -->
-        <div class="mb-3">
-          <label for="apellido" class="form-label">Apellido:</label>
-          <input type="text" class="form-control" id="apellido"  formControlName="apellido">
-        </div>
-        <!-- <div *ngIf="formulario.get('apellido')?.touched && formulario.get('apellido')?.hasError('required')" class="alert alert-danger">
-          El apellido es requerido
-      </div> -->
-      <div class="mb-3">
-        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento:</label>
-        <input type="date" class="form-control" id="fechaNacimiento" formControlName="fechaNacimiento"
-     />
-      </div>
-      <div class="mb-3">
-        <label for="fechaIngreso" class="form-label">Fecha de Ingreso:</label>
-        <input type="date" class="form-control" id="fechaIngreso" formControlName="fechaIngreso"
-     />
-      </div>
+    <div class="mb-3">
+      <label for="sueldoBruto" class="form-label">Sueldo Bruto:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="sueldoBruto"
+        formControlName="sueldoBruto"
+      />
+    </div>
 
-
-      <div class="mb-3">
-        <label for="area" class="form-label">Área:</label>
-        <select formControlName="area" class="form-select" id="area">
-            <option value="Administracion">Administración</option>
-            <option value="Compras">Compras</option>
-            <option value="Finanzas">Finanzas</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Recursos Humanos">Recursos Humanos</option>
-            <option value="Tesoreria">Tesorería</option>
-            <option value="Ventas">Ventas</option>
-        </select>
-      </div>
-
-
-
-        <div class="mb-3">
-          <label for="sueldoBruto" class="form-label">Sueldo Bruto:</label>
-          <input type="number" class="form-control" id="sueldoBruto" formControlName="sueldoBruto">
-        </div>
-
-      
-
-      
-        <button type="submit" class="btn btn-primary" (click)="guardar()">Guardar</button>
-      </form>
-
-
-
-
+    <button type="submit" class="btn btn-primary" (click)="guardar()">
+      Guardar
+    </button>
+  </form>
 </div>

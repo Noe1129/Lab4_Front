@@ -91,9 +91,6 @@ export class ReporteComponent implements OnInit, OnDestroy {
       title: {
         display: false,
       },
-      // datalabels: {
-      //   color: 'white',
-      // },
     },
     scales: {
       x: {

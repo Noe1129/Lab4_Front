@@ -1,57 +1,73 @@
 <div class="container-sm !justify !shadow pt-3">
+  <form [formGroup]="formulario">
+    <div class="col-4">
+      <label for="selectEmpleado" class="form-label">Empleado:</label>
+      <select id="selectEmpleado" class="form-select" formControlName="legajo">
+        <option *ngFor="let empleado of empleados" [value]="empleado.legajo">
+          {{ empleado.nombre }}, {{ empleado.apellido }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="mes" class="form-label">Mes:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="mes"
+        formControlName="mes"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="anio" class="form-label">Año:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="anio"
+        formControlName="anio"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="antiguedad" class="form-label">Antigüedad:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="antiguedad"
+        formControlName="antiguedad"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="jubilacion" class="form-label">Jubilación:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="jubilacion"
+        formControlName="jubilacion"
+      />
+    </div>
 
+    <div class="mb-3">
+      <label for="obraSocial" class="form-label">Obra Social:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="obraSocial"
+        formControlName="obraSocial"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="fondoComplejidad" class="form-label"
+        >Fondo Complejidad:</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="fondoComplejidad"
+        formControlName="fondoComplejidad"
+      />
+    </div>
 
-    <form [formGroup]="formulario">
-        <div class="col-4">
-            <label for="selectEmpleado" class="form-label">Empleado:</label>
-            <select id="selectEmpleado" class="form-select" formControlName="legajo">
-              <option *ngFor="let empleado of empleados" [value]="empleado.legajo">{{ empleado.nombre }}, {{empleado.apellido}} </option>
-            </select>
-          </div>
-        <div class="mb-3">
-          <label for="mes" class="form-label">Mes:</label>
-          <input type="number" class="form-control" id="mes" formControlName="mes">
-        </div>
-        <!-- <div *ngIf="formulario.get('mes')?.touched && formulario.get('mes')?.hasError('required')" class="alert alert-danger">
-          El mes es requerido
-      </div> -->
-        <div class="mb-3">
-          <label for="anio" class="form-label">Año:</label>
-          <input type="number" class="form-control" id="anio"  formControlName="anio">
-        </div>
-        <!-- <div *ngIf="formulario.get('anio')?.touched && formulario.get('anio')?.hasError('required')" class="alert alert-danger">
-          El año es requerido
-      </div> -->
-      <div class="mb-3">
-        <label for="antiguedad" class="form-label">Antigüedad:</label>
-        <input type="number" class="form-control" id="antiguedad" formControlName="antiguedad"
-     />
-      </div>
-      <div class="mb-3">
-        <label for="jubilacion" class="form-label">Jubilación:</label>
-        <input type="number" class="form-control" id="jubilacion" formControlName="jubilacion"
-     />
-      </div>
-
-
-        <div class="mb-3">
-          <label for="obraSocial" class="form-label">Obra Social:</label>
-          <input type="number" class="form-control" id="obraSocial" formControlName="obraSocial">
-        </div>
-        <div class="mb-3">
-            <label for="fondoComplejidad" class="form-label">Fondo Complejidad:</label>
-            <input type="number" class="form-control" id="fondoComplejidad" formControlName="fondoComplejidad">
-          </div>
-
-
-      
-        
-      
-        <button type="submit" class="btn btn-primary" (click)="guardar()">Guardar</button>
-      </form>
-
-
-
-
+    <button type="submit" class="btn btn-primary" (click)="guardar()">
+      Guardar
+    </button>
+  </form>
 </div>
-

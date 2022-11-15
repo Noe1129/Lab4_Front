@@ -1,22 +1,26 @@
 <div class="container-sm !justify !shadow pt-3">
-  <h3 >Recibos</h3>
-  
+  <h3>Recibos</h3>
+
   <form [formGroup]="formulario">
-  <div class="col-4">
-    <label for="selectEmpleado" class="form-label">Seleccione un empleado:</label>
-    <select id="selectEmpleado" class="form-select" formControlName="empleadoLegajo">
-      <option *ngFor="let empleado of empleados" [value]="empleado.legajo">{{ empleado.nombre }}, {{empleado.apellido}}</option>
-    </select>
-  </div>
+    <div class="col-4">
+      <label for="selectEmpleado" class="form-label"
+        >Seleccione un empleado:</label
+      >
+      <select
+        id="selectEmpleado"
+        class="form-select"
+        formControlName="empleadoLegajo"
+      >
+        <option *ngFor="let empleado of empleados" [value]="empleado.legajo">
+          {{ empleado.nombre }}, {{ empleado.apellido }}
+        </option>
+      </select>
+    </div>
   </form>
-  
 
   <div class="table-responsive pt-3">
-
-    <table
-      class="table table-hover table-bordered  align-middle"
-    >
-      <thead >
+    <table class="table table-hover table-bordered align-middle">
+      <thead>
         <tr>
           <th>Número</th>
           <th>Mes</th>
@@ -28,23 +32,19 @@
           <th>Sueldo Neto</th>
         </tr>
       </thead>
-      <tbody >
-        <tr *ngFor="let recibo of recibos" >
+      <tbody>
+        <tr *ngFor="let recibo of recibos">
           <td scope="row">{{ recibo.nroRecibo }}</td>
-          <td>{{ recibo.mes |date:"MMMM"}}</td>
+          <td>{{ recibo.mes | date: "MMMM" }}</td>
           <td>{{ recibo.anio }}</td>
           <td>{{ recibo.antiguedad | currency: "ARS" }}</td>
           <td>{{ recibo.jubilacion | currency: "ARS" }}</td>
-          <td>{{ recibo.obraSocial | currency:"ARS" }}</td>
-          <td>{{ recibo.fondoComplejidad | currency:"ARS" }}</td>
-          <td>{{ recibo.sueldoNeto | currency:"ARS" }}</td>
+          <td>{{ recibo.obraSocial | currency: "ARS" }}</td>
+          <td>{{ recibo.fondoComplejidad | currency: "ARS" }}</td>
+          <td>{{ recibo.sueldoNeto | currency: "ARS" }}</td>
         </tr>
       </tbody>
       <tfoot></tfoot>
     </table>
   </div>
 </div>
-
-
-
-
